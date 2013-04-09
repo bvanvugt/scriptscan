@@ -27,8 +27,8 @@
                     <input type="text" class="span8" placeholder="Enter a URL to scan"
                            data-bind="value: scanURL, valueUpdate: ['afterkeydown', 'afterpaste']">
                     <br>
-                    <button class="btn btn-large disabled" type="button"
-                            data-bind="css: { disabled: !isScanURLValid() }">
+                    <button class="btn btn-large disabled" type="submit"
+                            data-bind="submit: submitScanURL, css: { disabled: !isScanURLValid() }">
                         Scan URL
                     </button>
                 </form>

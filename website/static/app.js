@@ -14,7 +14,12 @@ $(document).ready(function () {
 	    });
 
 	    self.submitScanURL = function () {
-	    	console.log('scan!');
+	    	$.getJSON('/scan', 
+	    		{ url: self.scanURL() },
+	    		function(response) {
+	    			console.log(response);
+	    		}
+	    	);
 	    };
 	};
 
