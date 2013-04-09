@@ -33,6 +33,15 @@
                     </button>
                 </form>
             </div>
+
+            <!-- ko foreach: scripts -->
+            <div class="row-fluid">
+                <h3 data-bind="text: domain"></h3>
+                <p data-bind="text: raw"></p>
+                <hr/>
+            </div>
+            <!-- /ko -->
+
         </div>
         
         <!-- Load JS here for greater good =============================-->

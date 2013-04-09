@@ -17,10 +17,19 @@ $(document).ready(function () {
 	    	$.getJSON('/scan', 
 	    		{ url: self.scanURL() },
 	    		function(response) {
+	    			if (response.success) {
+	    				self.scripts(response.data)
+	    			} else {
+	    				self.scripts([]);
+	    				alert(response.message);
+
+	    			}
 	    			console.log(response);
 	    		}
 	    	);
 	    };
+
+	    self.scripts = ko.observableArray();
 	};
 
 	ko.applyBindings(new AppViewModel());
